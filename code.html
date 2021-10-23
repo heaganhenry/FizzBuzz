@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 	<head>
-		<title>App Name: A Coding Project by Heagan Henry</title>
+		<title>FizzBuzz: A Coding Project by Heagan Henry</title>
 		<!-- Required meta tags -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -31,7 +31,7 @@
 						width="30"
 						height="30"
 					/>
-					APP NAME</a
+					FIZZBUZZ</a
 				>
 				<button
 					class="navbar-toggler"
@@ -56,7 +56,9 @@
 							<a class="nav-link active" aria-current="page" href="code.html">The Code</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="https://github.com/heaganhenry">Git Repo</a>
+							<a class="nav-link" target="_blank" href="https://github.com/heaganhenry/FizzBuzz"
+								>Git Repo</a
+							>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" target="_blank" href="#">About</a>
@@ -68,22 +70,119 @@
 		<!-- Main Section -->
 		<main class="flex-shrink-0">
 			<div class="container py-5 px-5 mt-5">
-				<span class="h2 border-bottom border-1 border-dark">The Code for APP NAME.</span>
+				<span class="h2 border-bottom border-1 border-dark">The Code for FIZZBUZZ</span>
 				<div class="row row-cols-1 row-cols-lg-2 gy-3">
 					<div class="col-lg-8">
 						<pre class="line-numbers">
                             <code class="language-javascript">
-                                // Call Hello World
-                                function helloWorld() {
-                                    alert("Hello World");
-                                }
+								// controller function
+								function getValues() {
+									// get values from user input
+									let fizzValue = document.getElementById("fizzValue").value;
+									let buzzValue = document.getElementById("buzzValue").value;
+								
+									// convert input to integers
+									fizzValue = parseInt(fizzValue);
+									buzzValue = parseInt(buzzValue);
+								
+									// input validation
+									if (Number.isInteger(fizzValue) && Number.isInteger(buzzValue)){
+										let fbData = generateFizzbuzz(fizzValue, buzzValue);
+										displayFizzbuzz(fbData);
+									}
+									else
+										alert("Enter whole number values");
+								}
+								
+								// logic function
+								function generateFizzbuzz(fizzValue, buzzValue) {
+									let fbData = [];
+								
+									// generate output based on which numbers are multiples of the user input
+									for (let i = 1; i <= 100; i++){
+										if (i % fizzValue === 0 && i % buzzValue === 0)
+											fbData.push("FizzBuzz");
+										else if (i % fizzValue === 0)
+											fbData.push("Fizz");
+										else if (i % buzzValue === 0)
+											fbData.push("Buzz");
+										else
+											fbData.push(i);
+									}
+								
+									return fbData;
+								}
+								
+								// display function
+								function displayFizzbuzz(fbData) {
+									// get the table body element from the page
+									let tableBody = document.getElementById("results");
+								
+									// get the template row
+									let templateRow = document.getElementById("fbTemplate");
+								
+									// clear the table body
+									tableBody.innerHTML = "";
+								
+									// add all the rows to the table
+									for (let i = 0; i < fbData.length; i += 5){
+										let tableRow = document.importNode(templateRow.content, true);
+								
+										// get only the columns from the template
+										let rowCols = tableRow.querySelectorAll("td");
+								
+										// insert generated fizzbuzz output into table rows
+										rowCols[0].classList.add(fbData[i]);
+										rowCols[0].textContent = fbData[i];
+								
+										rowCols[1].classList.add(fbData[i + 1]);
+										rowCols[1].textContent = fbData[i + 1];
+										
+										rowCols[2].classList.add(fbData[i + 2]);
+										rowCols[2].textContent = fbData[i + 2];
+								
+										rowCols[3].classList.add(fbData[i + 3]);
+										rowCols[3].textContent = fbData[i + 3];
+								
+										rowCols[4].classList.add(fbData[i + 4]);
+										rowCols[4].textContent = fbData[i + 4];
+								
+										// insert generated rows into the web page table
+										tableBody.appendChild(tableRow);
+									}
+								}
                             </code>
                         </pre>
 					</div>
 					<div class="col-lg-4">
-						<p style="font-size: large">The Code is structured in one function.</p>
-						<span class="h4" style="font-size: large">Hello World</span>
-						<p>helloWorld is a function that displays an alert with a message of "Hello World".</p>
+						<p style="font-size: large">The Code is structured in three functions.</p>
+						<span class="h4" style="font-size: large">getValues</span>
+						<p>
+							getValues is a function that is responsible for receiving the user's input, validating it,
+							then calling the other two functions to complete the application. This is accomplished by
+							first referencing unique id's from the fields that accept the user input. This data is then
+							converted to integers and then validated to ensure that the conversion was successful, if
+							not an error message is displayed to the user. If the input was valid the second function is
+							then called.
+						</p>
+						<span class="h4" style="font-size: large">generateFizzbuzz</span>
+						<p>
+							generateFizzbuzz is a function that that takes the validated user input and generates the
+							appropriate output based on which numbers are multiples of the user input. This is achieved
+							by first using a for loop to generate numbers from 1 to 100. The numbers evenly divisible by
+							the Fizz value are replaced with <span class="Fizz">"Fizz"</span>, the numbers evenly
+							divisible by the Buzz value are replaced with <span class="Buzz">"Buzz"</span> and the
+							numbers that can be evenly divisible by both inputs are replaced with
+							<span class="FizzBuzz">"FizzBuzz"</span>.
+						</p>
+						<span class="h4" style="font-size: large">displayFizzbuzz</span>
+						<p>
+							displayFizzbuzz takes the generated output from the above function and inserts the data into
+							a table on the web page. This is achieved by referencing a unique id for the table on the
+							web page and inserting the generated text into each row. Each row is also given a class
+							based on the text inserted into it and is used to display the text on the web page with
+							various colors using css.
+						</p>
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 :root {
-    --primary-color: #000000;
-    --secondary-color: #f55b14;
+    --primary-color: #0aaadb;
+    --secondary-color: #1bdaaa;
     --dark-color: #292929;
     --white-color: #e7e7e7;
 }
@@ -9,13 +9,16 @@
     font-family: xyz;
 }
 
-.odd {
-    font-weight: 100;
+.Fizz {
+    color: var(--secondary-color);
 }
 
-.even {
-    font-weight: bold;
-    font-size: large;
+.Buzz {
+    color: var(--primary-color);
+}
+
+.FizzBuzz {
+    color: rgb(157, 0, 172);
 }
 
 body {
