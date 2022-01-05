@@ -1,184 +1,149 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
-	<head>
-		<title>FizzBuzz: A Coding Project by Heagan Henry</title>
-		<!-- Required meta tags -->
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-		<!-- Bootstrap CSS -->
-		<link
-			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-			rel="stylesheet"
-			integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-			crossorigin="anonymous"
-		/>
+<head>
+	<title>FizzBuzz: A Coding Project by Heagan Henry</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-		<link rel="stylesheet" href="css/site.css" />
-		<link rel="icon" href="img/favicon.ico?" />
-	</head>
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous" />
 
-	<body class="d-flex flex-column h-100">
-		<!-- Nav Section -->
-		<nav class="navbar navbar-expand-md navbar-dark fixed-top">
-			<div class="container-fluid">
-				<a class="navbar-brand logoFont" href="#"
-					><img
-						src="img/HFS_Logo.png"
-						alt="Heagan Logo"
-						class="d-inline-block align-text-top me-1"
-						width="30"
-						height="30"
-					/>
-					FIZZBUZZ</a
-				>
-				<button
-					class="navbar-toggler"
-					type="button"
-					data-bs-toggle="collapse"
-					data-bs-target="#navbarCollapse"
-					aria-controls="navbarCollapse"
-					aria-expanded="false"
-					aria-label="Toggle navigation"
-				>
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
-					<ul class="navbar-nav me-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="app.html">The App</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="code.html">The Code</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="https://github.com/heaganhenry/FizzBuzz"
-								>Git Repo</a
-							>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" target="_blank" href="#">About</a>
-						</li>
-					</ul>
-				</div>
+	<link rel="stylesheet" href="css/site.css" />
+	<link rel="icon" href="img/favicon.ico?" />
+</head>
+
+<body class="d-flex flex-column h-100">
+	<!-- Nav Section -->
+	<nav class="navbar navbar-expand-md navbar-dark fixed-top">
+		<div class="container-fluid">
+			<a class="navbar-brand logoFont" href="#"><img src="img/HFS_Logo.png" alt="Heagan Logo"
+					class="d-inline-block align-text-top me-1" width="30" height="30" />
+				FIZZBUZZ</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+				aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarCollapse">
+				<ul class="navbar-nav me-auto mb-2 mb-md-0">
+					<li class="nav-item">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" aria-current="page" href="app.html">The App</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="code.html">The Code</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" target="_blank" href="https://github.com/heaganhenry/FizzBuzz">Git Repo</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" target="_blank" href="#">About</a>
+					</li>
+				</ul>
 			</div>
-		</nav>
-		<!-- Main Section -->
-		<main class="flex-shrink-0">
-			<div class="container mt-5">
-				<div class="row row-cols-1 row-cols-lg-2">
-					<div class="col col-lg-4 border-end border-2">
-						<h1>FIZZBUZZ: A Coding Project</h1>
-						<p class="lead">
-							When it counts you Fizz Buzz. A javascript coding exercise using loops. Write a program that
-							prints the numbers from 1 to 100 and for multiples of '3' display
-							<span class="Fizz">"Fizz"</span> instead of the number and for the multiples of '5' display
-							<span class="Buzz">"Buzz"</span>. If a multiple of both display
-							<span class="FizzBuzz">"FizzBuzz"</span>.
-						</p>
-						<h2 class="mt-5">Instructions</h2>
-						<p>Enter a fizz and buzz value. Press the button and the values will appear.</p>
-					</div>
-					<div class="col col-lg-8">
-						<div>
-							<p class="h5">Enter Values</p>
-							<form class="row gy-2 gx-3">
-								<div class="col">
-									<input
-										id="fizzValue"
-										type="number"
-										class="form-control"
-										value="3"
-										placeholder="Fizz"
-										aria-label="Fizz"
-									/>
-								</div>
-								<div class="col">
-									<input
-										id="buzzValue"
-										type="number"
-										class="form-control"
-										value="5"
-										placeholder="Buzz"
-										aria-label="Buzz"
-									/>
-								</div>
-								<div class="col-12 d-flex justify-content-end">
-									<button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Buzz It</button>
-								</div>
-							</form>
-							<h2 class="border-bottom border-2">Results</h2>
-							<div class="table-responsive">
-								<table class="table table-striped">
-									<tbody id="results">
-										<!-- Results Go Here -->
-									</tbody>
-								</table>
+		</div>
+	</nav>
+	<!-- Main Section -->
+	<main class="flex-shrink-0">
+		<div class="container mt-5">
+			<div class="row row-cols-1 row-cols-lg-2">
+				<div class="col col-lg-4 border-end border-2">
+					<h1>FIZZBUZZ: A Coding Project</h1>
+					<p class="lead">
+						When it counts you Fizz Buzz. A javascript coding exercise using loops. Write a program that
+						prints the numbers from 1 to 100 and for multiples of '3' display
+						<span class="Fizz">"Fizz"</span> instead of the number and for the multiples of '5' display
+						<span class="Buzz">"Buzz"</span>. If a multiple of both display
+						<span class="FizzBuzz">"FizzBuzz"</span>.
+					</p>
+					<h2 class="mt-5">Instructions</h2>
+					<p>Enter a fizz and buzz value. Press the button and the values will appear.</p>
+				</div>
+				<div class="col col-lg-8">
+					<div>
+						<p class="h5">Enter Values</p>
+						<form class="row gy-2 gx-3">
+							<div class="col">
+								<input id="fizzValue" type="number" class="form-control" value="3" placeholder="Fizz"
+									aria-label="Fizz" />
 							</div>
+							<div class="col">
+								<input id="buzzValue" type="number" class="form-control" value="5" placeholder="Buzz"
+									aria-label="Buzz" />
+							</div>
+							<div class="col-12 d-flex justify-content-end">
+								<button id="btnSubmit" type="button" class="btn btn-dark btn-lg">Buzz It</button>
+							</div>
+						</form>
+						<h2 class="border-bottom border-2">Results</h2>
+						<div class="table-responsive">
+							<table class="table table-striped">
+								<tbody id="results">
+									<!-- Results Go Here -->
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-		</main>
-		<!-- Footer Section -->
-		<footer class="footer mt-auto py-3 bg-dark sticky-footer">
-			<div class="container-fluid">
-				<div class="row row-cols-1 row-cols-lg-3 gy-2">
-					<div class="col order-last order-lg-first text-light">
-						<div><span class="text-muted">&copy;2021</span> Heagan Henry | heaganhenry@gmail.com</div>
-					</div>
-					<div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
-						<img src="img/HFS_Mark_White_Crop.png" alt="Heagan Henry Logo" height="40" />
-					</div>
-					<div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
-						<div class="row">
-							<div class="col social">
-								<a href="https://www.linkedin.com/in/heaganhenry/" target="_blank"
-									><i class="fab fa-linkedin fa-2x"></i
-								></a>
-							</div>
-							<div class="col social">
-								<a href="https://github.com/heaganhenry" target="_blank"
-									><i class="fab fa-github fa-2x"></i
-								></a>
-							</div>
-							<div class="col social">
-								<a href="https://twitter.com/HeaganHenry" target="_blank"
-									><i class="fab fa-twitter fa-2x"></i
-								></a>
-							</div>
+		</div>
+	</main>
+	<!-- Footer Section -->
+	<footer class="footer mt-auto py-3 bg-dark sticky-footer">
+		<div class="container-fluid">
+			<div class="row row-cols-1 row-cols-lg-3 gy-2">
+				<div class="col order-last order-lg-first text-light">
+					<div><span class="text-muted">&copy;2021</span> Heagan Henry | heaganhenry@gmail.com</div>
+				</div>
+				<div class="col d-flex align-items-center justify-content-start justify-content-lg-center">
+					<img src="img/hhbrand.png" alt="Heagan Henry Logo" height="40" />
+				</div>
+				<div class="col d-flex align-items-center justify-content-start justify-content-lg-end">
+					<div class="row">
+						<div class="col social">
+							<a href="https://www.linkedin.com/in/heaganhenry/" target="_blank"><i
+									class="fab fa-linkedin fa-2x"></i></a>
+						</div>
+						<div class="col social">
+							<a href="https://github.com/heaganhenry" target="_blank"><i
+									class="fab fa-github fa-2x"></i></a>
+						</div>
+						<div class="col social">
+							<a href="https://twitter.com/HeaganHenry" target="_blank"><i
+									class="fab fa-twitter fa-2x"></i></a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</footer>
+		</div>
+	</footer>
 
-		<!-- Template row -->
-		<template id="fbTemplate">
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-			</tr>
-		</template>
+	<!-- Template row -->
+	<template id="fbTemplate">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</template>
 
-		<!-- Bootstrap JS -->
-		<script
-			src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-			integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-			crossorigin="anonymous"
-		></script>
-		<!-- Fontawesome JS -->
-		<script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
-		<!-- Custom JS -->
-		<script src="js/site.js"></script>
-		<script>
-			document.getElementById("btnSubmit").addEventListener("click", getValues);
-		</script>
-	</body>
+	<!-- Bootstrap JS -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+	</script>
+	<!-- Fontawesome JS -->
+	<script src="https://kit.fontawesome.com/5db21ba9c6.js" crossorigin="anonymous"></script>
+	<!-- Custom JS -->
+	<script src="js/site.js"></script>
+	<script>
+		document.getElementById("btnSubmit").addEventListener("click", getValues);
+	</script>
+</body>
+
 </html>
